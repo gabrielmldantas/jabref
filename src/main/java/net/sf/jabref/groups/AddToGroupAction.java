@@ -30,6 +30,7 @@ import net.sf.jabref.groups.structure.AbstractGroup;
 import net.sf.jabref.logic.l10n.Localization;
 import net.sf.jabref.gui.undo.NamedCompound;
 
+
 public class AddToGroupAction extends AbstractAction {
 
     private GroupTreeNode mNode;
