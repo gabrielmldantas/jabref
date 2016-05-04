@@ -42,6 +42,8 @@ public class SearchQueryTest {
 
     @Test
     public void testIsValidQuery() {
+        assertFalse(new SearchQuery("asdf[", true, true).isValidQuery());
+        assertTrue(new SearchQuery("asdf[", true, false).isValidQuery());
         assertTrue(new SearchQuery("asdf", true, false).isValidQuery());
         assertTrue(new SearchQuery("asdf", true, true).isValidQuery());
         assertTrue(new SearchQuery("123", true, true).isValidQuery());
