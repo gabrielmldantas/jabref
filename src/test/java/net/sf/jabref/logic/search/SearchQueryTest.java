@@ -40,4 +40,16 @@ public class SearchQueryTest {
         assertTrue(new SearchQuery("author=asdf", true, true).isMatch(entry));
     }
 
+    @Test
+    public void testIsValidQuery() {
+        assertTrue(new SearchQuery("asdf", true, false).isValidQuery());
+        assertTrue(new SearchQuery("asdf", true, true).isValidQuery());
+        assertTrue(new SearchQuery("123", true, true).isValidQuery());
+        assertTrue(new SearchQuery("123", true, true).isValidQuery());
+        assertTrue(new SearchQuery("author=asdf", true, false).isValidQuery());
+        assertTrue(new SearchQuery("author=asdf", true, true).isValidQuery());
+        assertTrue(new SearchQuery("author=123", true, false).isValidQuery());
+        assertTrue(new SearchQuery("author=123", true, true).isValidQuery());
+    }
+
 }
