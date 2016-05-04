@@ -2,6 +2,9 @@ package net.sf.jabref.logic.search;
 
 import org.junit.Test;
 
+import net.sf.jabref.model.entry.BibEntry;
+import net.sf.jabref.model.entry.BibtexEntryTypes;
+
 import static org.junit.Assert.*;
 
 public class SearchQueryTest {
@@ -24,6 +27,17 @@ public class SearchQueryTest {
         assertFalse(new SearchQuery("asdf", true, false).isGrammarBasedSearch());
         assertFalse(new SearchQuery("asdf", true, true).isGrammarBasedSearch());
         assertTrue(new SearchQuery("author=asdf", true, false).isGrammarBasedSearch());
+    }
+
+    @Test
+    public void testIsMatch() {
+        BibEntry entry = new BibEntry();
+        entry.setType(BibtexEntryTypes.ARTICLE);
+        entry.setField("author", "asdf");
+
+        assertFalse(new SearchQuery("qwer", true, true).isMatch(entry));
+        assertTrue(new SearchQuery("asdf", true, true).isMatch(entry));
+        assertTrue(new SearchQuery("author=asdf", true, true).isMatch(entry));
     }
 
 }
