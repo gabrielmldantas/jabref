@@ -30,7 +30,6 @@ import net.sf.jabref.importer.fileformat.BibtexParser;
 import net.sf.jabref.model.database.BibDatabase;
 import net.sf.jabref.model.entry.BibEntry;
 
-
 public class AddToGroupActionTest {
 
     private static BasePanel bp;
