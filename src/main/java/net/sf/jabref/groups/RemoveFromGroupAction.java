@@ -66,7 +66,7 @@ public class RemoveFromGroupAction extends AbstractAction {
             return; // no changed made
         }
 
-        mPanel.undoManager.addEdit(undo);
+        mPanel.undoManagerAddEdit(undo);
         mPanel.markBaseChanged();
         mPanel.updateEntryEditorIfShowing();
         mPanel.getGroupSelector().valueChanged(null);
