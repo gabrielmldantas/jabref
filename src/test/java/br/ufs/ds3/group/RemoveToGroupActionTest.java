@@ -86,7 +86,6 @@ public class RemoveToGroupActionTest {
         action = new RemoveFromGroupAction(node, bp);
         action.actionPerformed(new ActionEvent(node, 0, "remove"));
         assertEquals(1, group2.getEntries().size());
-
     }
 
     public static BibDatabase getBibtexDatabase() {
