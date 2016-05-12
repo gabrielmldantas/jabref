@@ -355,6 +355,7 @@ public class GroupSelector extends SidePaneComponent implements TreeSelectionLis
         reduce.setMargin(butIns);
         expand.setMargin(butIns);
         openset.setMargin(butIns);
+        newButton.setName("addgroup");
         newButton.addActionListener(this);
         refresh.addActionListener(this);
         andCb.addActionListener(this);
