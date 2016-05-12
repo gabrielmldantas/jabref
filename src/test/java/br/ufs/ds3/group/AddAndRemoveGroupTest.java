@@ -7,7 +7,7 @@ import org.mockito.Mockito;
 
 import org.junit.Test;
 
-public class GroupTreeNodeTest {
+public class AddAndRemoveGroupTest {
 
     /*testar o método de adicionar um grupo a outro grupo,
     o método add é abstraido em GroupTreeNode desde a classe DefaultMutableTreeNode */
