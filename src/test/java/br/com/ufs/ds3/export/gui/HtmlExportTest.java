@@ -43,8 +43,10 @@ public class HtmlExportTest extends AssertJSwingJUnitTestCase {
 
     @Test
     public void exportEntriesToHtml() throws IOException {
-        frameFixture.menuItemWithPath("File", "Export").click();
+        frameFixture.menuItemWithPath("Arquivo", "Abrir base de dados").click();
         JFileChooserFixture fileChooser = frameFixture.fileChooser();
+        fileChooser.selectFile(new File("jabref"));
+        frameFixture.menuItemWithPath("Arquivo", "Exportar").click();
         File targetFile = File.createTempFile("jabref", "test.html");
         fileChooser.setCurrentDirectory(targetFile.getParentFile());
         fileChooser.fileNameTextBox().setText(targetFile.getName());

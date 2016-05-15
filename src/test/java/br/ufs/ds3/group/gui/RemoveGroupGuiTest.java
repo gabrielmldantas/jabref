@@ -42,22 +42,28 @@ public class RemoveGroupGuiTest extends AssertJSwingJUnitTestCase {
 
     @Test
     public void removeGroupTest() {
+        // Ativar aba lateral onde se localizam os grupos
         frameFixture.menuItemWithPath("Visualizar", "Mostrar/Esconder interface de grupos").click();
+
+        // Clica no botão para adicionar grupo
         frameFixture.button("addgroup").click(); // Foi necessário adicionar nome ao botão
+
+        // Preenche nome do grupo e clica em OK
         DialogFixture popUpMenu = WindowFinder.findDialog(GroupDialog.class).using(robot()); // Group Dialog se tornou público
         JTextComponentFixture nomeGrupo = popUpMenu.textBox("name_group");
         String texto = "teste";
         nomeGrupo.setText(texto);
-
         frameFixture.button("okButton").click(); // Foi necessário adicionar nome ao botão
 
+        // Abre o popup de opções sobre o grupo criado
         JTreeFixture arvoreDeGrupos = frameFixture.tree();
-
         arvoreDeGrupos.rightClickRow(1);
 
+        // Seleciona a opção de remover grupos e subgrupos
         JPopupMenuFixture popUpMenu2 = arvoreDeGrupos.showPopupMenuAt(1);
         popUpMenu2.menuItemWithPath("Remover grupos e subgrupos").click();
 
+        // Confirma a remoção
         JOptionPaneFixture confirmationDialog = frameFixture.optionPane();
         confirmationDialog.yesButton().click();
     }
