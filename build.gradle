@@ -360,10 +360,27 @@ task getdeps(type: Copy) {
 
 task regressionTest(type: Test) {
 	filter{
-		includeTestsMatching "br.com.ufs.ds3.export.*"
+		includeTestsMatching "br.com.ufs.ds3.export.HtmlExportIT"
 		includeTestsMatching "br.com.ufs.ds3.mail.*"
-		includeTestsMatching "br.ufs.ds3.group.*"
-		includeTestsMatching "net.sf.jabref.*"
+		
+		// Classes do pacote br.ufs.ds3.group
+		includeTestsMatching "br.ufs.ds3.group.AddAndRemoveGroupTest"
+		includeTestsMatching "AddToGroupActionTest"
+		includeTestsMatching "RemoveToGroupActionTest"
+		
+		includeTestsMatching "net.sf.jabref.
+		includeTestsMatching "net.sf.jabref.ArchitectureTests
+		
+		// Classes do pacote net.sf.jabref
+		includeTestsMatching "net.sf.jabref.BibDatabaseTest"
+		includeTestsMatching "net.sf.jabref.BibtexTestData"
+		includeTestsMatching "net.sf.jabref.FileBasedTestCase"
+		includeTestsMatching "net.sf.jabref.FileBasedTestHelper"
+		includeTestsMatching "net.sf.jabref.JabRefCLITest"
+		includeTestsMatching "net.sf.jabref.JabRefPreferencesTest"
+		includeTestsMatching "net.sf.jabref.SearchQueryHighlightListenerTest"
+		includeTestsMatching "net.sf.jabref.TestIconsProperties"
+		
 		includeTestsMatching "net.sf.jabref.bibtex.*"
 		includeTestsMatching "net.sf.jabref.bibtex.comparator.*"
 		includeTestsMatching "net.sf.jabref.bst.*"
