@@ -359,4 +359,7 @@ task getdeps(type: Copy) {
 }
 
 task regressionTest(type: Test) {
+	filter{
+		includeTestsMatching "br.com.ufs.ds3.mail.SendAsEmailTest"
+	}
 }
