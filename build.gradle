@@ -368,10 +368,8 @@ task regressionTest(type: Test) {
 		includeTestsMatching "AddToGroupActionTest"
 		includeTestsMatching "RemoveToGroupActionTest"
 		
-		includeTestsMatching "net.sf.jabref.
-		includeTestsMatching "net.sf.jabref.ArchitectureTests
-		
 		// Classes do pacote net.sf.jabref
+		includeTestsMatching "net.sf.jabref.ArchitectureTests"
 		includeTestsMatching "net.sf.jabref.BibDatabaseTest"
 		includeTestsMatching "net.sf.jabref.BibtexTestData"
 		includeTestsMatching "net.sf.jabref.FileBasedTestCase"
