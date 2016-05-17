@@ -359,4 +359,59 @@ task getdeps(type: Copy) {
 }
 
 task regressionTest(type: Test) {
+	filter{
+		includeTestsMatching "br.com.ufs.ds3.export.HtmlExportIT"
+		includeTestsMatching "br.com.ufs.ds3.mail.*"
+		
+		// Classes do pacote br.ufs.ds3.group
+		includeTestsMatching "br.ufs.ds3.group.AddAndRemoveGroupTest"
+		includeTestsMatching "AddToGroupActionTest"
+		includeTestsMatching "RemoveToGroupActionTest"
+		
+		// Classes do pacote net.sf.jabref
+		includeTestsMatching "net.sf.jabref.ArchitectureTests"
+		includeTestsMatching "net.sf.jabref.BibDatabaseTest"
+		includeTestsMatching "net.sf.jabref.BibtexTestData"
+		includeTestsMatching "net.sf.jabref.FileBasedTestCase"
+		includeTestsMatching "net.sf.jabref.FileBasedTestHelper"
+		includeTestsMatching "net.sf.jabref.JabRefCLITest"
+		includeTestsMatching "net.sf.jabref.JabRefPreferencesTest"
+		includeTestsMatching "net.sf.jabref.SearchQueryHighlightListenerTest"
+		includeTestsMatching "net.sf.jabref.TestIconsProperties"
+		
+		includeTestsMatching "net.sf.jabref.bibtex.*"
+		includeTestsMatching "net.sf.jabref.bibtex.comparator.*"
+		includeTestsMatching "net.sf.jabref.bst.*"
+		includeTestsMatching "net.sf.jabref.exporter.layout.*"
+		includeTestsMatching "net.sf.jabref.exporter.layout.format.*"
+		includeTestsMatching "net.sf.jabref.external.*"
+		includeTestsMatching "net.sf.jabref.groups.structure.*"
+		includeTestsMatching "net.sf.jabref.importer.*"
+		includeTestsMatching "net.sf.jabref.importer.fetcher.*"
+		includeTestsMatching "net.sf.jabref.importer.fileformat.*"
+		includeTestsMatching "net.sf.jabref.logic.*"
+		includeTestsMatching "net.sf.jabref.logic.autocompleter.*"
+		includeTestsMatching "net.sf.jabref.logic.fetcher.*"
+		includeTestsMatching "net.sf.jabref.logic.formatter.*"
+		includeTestsMatching "net.sf.jabref.logic.formatter.bibtexfields.*"
+		includeTestsMatching "net.sf.jabref.logic.formatter.casechanger.*"
+		includeTestsMatching "net.sf.jabref.logic.formatter.minifier.*"
+		includeTestsMatching "net.sf.jabref.logic.groups.*"
+		includeTestsMatching "net.sf.jabref.logic.integrity.*"
+		includeTestsMatching "net.sf.jabref.logic.io.*"
+		includeTestsMatching "net.sf.jabref.logic.journals.*"
+		includeTestsMatching "net.sf.jabref.logic.l10n.*"
+		includeTestsMatching "net.sf.jabref.logic.labelPattern.*"
+		includeTestsMatching "net.sf.jabref.logic.logging.*"
+		includeTestsMatching "net.sf.jabref.logic.net.*"
+		includeTestsMatching "net.sf.jabref.logic.remote.*"
+		includeTestsMatching "net.sf.jabref.logic.search.*"
+		includeTestsMatching "net.sf.jabref.logic.search.rules.*"
+		includeTestsMatching "net.sf.jabref.logic.search.rules.sets.*"
+		includeTestsMatching "net.sf.jabref.logic.util.*"
+		includeTestsMatching "net.sf.jabref.logic.util.io.*"
+		includeTestsMatching "net.sf.jabref.logic.util.strings.*"
+		includeTestsMatching "net.sf.jabref.model.database.*"
+		includeTestsMatching "net.sf.jabref.model.entry.*"
+	}
 }

@@ -50,7 +50,7 @@ import java.util.regex.PatternSyntaxException;
  * Dialog for creating or modifying groups. Operates directly on the Vector
  * containing group information.
  */
-class GroupDialog extends JDialog {
+public class GroupDialog extends JDialog {
 
     private static final int INDEX_EXPLICITGROUP = 0;
     private static final int INDEX_KEYWORDGROUP = 1;
@@ -135,6 +135,8 @@ class GroupDialog extends JDialog {
         m_description.setVerticalAlignment(SwingConstants.TOP);
         getRootPane().setDefaultButton(m_ok);
 
+        m_ok.setName("okButton");
+
         // build individual layout cards for each group
         m_optionsPanel.setLayout(m_optionsLayout);
         // ... for explicit group
@@ -188,6 +190,7 @@ class GroupDialog extends JDialog {
         builderAll.nextLine();
         builderAll.nextLine();
         builderAll.append(Localization.lang("Name"));
+        m_name.setName("name_group");
         builderAll.append(m_name);
         builderAll.nextLine();
         builderAll.nextLine();

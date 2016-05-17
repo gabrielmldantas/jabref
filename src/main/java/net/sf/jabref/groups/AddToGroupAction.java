@@ -30,10 +30,11 @@ import net.sf.jabref.groups.structure.AbstractGroup;
 import net.sf.jabref.logic.l10n.Localization;
 import net.sf.jabref.gui.undo.NamedCompound;
 
+
 public class AddToGroupAction extends AbstractAction {
 
     private GroupTreeNode mNode;
-    private final boolean m_move;
+    private final boolean m_move; // flag to indicate if action is to move entry for another group
     private BasePanel mPanel;
 
 
@@ -129,7 +130,7 @@ public class AddToGroupAction extends AbstractAction {
 
         undoAll.end();
 
-        mPanel.undoManager.addEdit(undoAll);
+        mPanel.undoManagerAddEdit(undoAll);
         mPanel.markBaseChanged();
         mPanel.updateEntryEditorIfShowing();
         mPanel.getGroupSelector().valueChanged(null);

@@ -88,6 +88,8 @@ import javax.swing.*;
 import javax.swing.tree.TreePath;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
+import javax.swing.undo.UndoableEdit;
+
 import java.awt.*;
 import java.awt.datatransfer.*;
 import java.awt.event.ActionEvent;
@@ -254,6 +256,10 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
             title = getDatabaseFile().getName() + changeFlag;
         }
         return title;
+    }
+
+    public boolean undoManagerAddEdit(UndoableEdit edit) {
+        return undoManager.addEdit(edit);
     }
 
     public boolean isModified() {

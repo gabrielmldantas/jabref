@@ -6,7 +6,7 @@ import net.sf.jabref.importer.ParserResult;
 import net.sf.jabref.model.database.BibDatabase;
 import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class BibDatabaseTest {
 
-    @Before
+    @BeforeClass
     public void setup() {
         Globals.prefs = JabRefPreferences.getInstance(); // set preferences for this test
     }
